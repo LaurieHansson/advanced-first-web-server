@@ -68,6 +68,25 @@ app.delete('/users/:id', (req, res, next) => {
  user.isActive = false;
  return res.send("deleted");
 });
+
+
+app.post("/users", (req, res, next) => {
+
+  idCount++;
+  const newUser = {
+     _id: idCount,
+     name: req.body.name
+  }
+  users.push(newUser);
+  return res.json(users[users.length - 1]);
+})
+
+app.post('users/:id',(req, res, next)=>{
+
+
+
+
+});
 app.use(function(request,response,next){
    return response.send(users);
 });
