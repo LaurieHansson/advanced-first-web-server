@@ -70,46 +70,27 @@ app.delete('/users/:id', (req, res, next) => {
 });
 
 
+app.post("/users", (req, res, next) => {
+
+  idCount++;
+  const newUser = {
+     _id: idCount,
+     name: req.body.name
+  }
+  users.push(newUser);
+  return res.json(users[users.length - 1]);
+})
+
+app.post('users/:id',(req, res, next)=>{
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+});
 app.use(function(request,response,next){
    return response.send(users);
 });
 
-// tell express to send back data 
 
 app.use(function(req,res,next){
   return res.send("whatcha gon do");
