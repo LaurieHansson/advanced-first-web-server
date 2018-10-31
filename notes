@@ -1,0 +1,3 @@
+where express can get files to serve
+
+ app.use(express.static('public'))
