@@ -68,48 +68,10 @@ app.delete('/users/:id', (req, res, next) => {
  user.isActive = false;
  return res.send("deleted");
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 app.use(function(request,response,next){
    return response.send(users);
 });
 
-// tell express to send back data 
 
 app.use(function(req,res,next){
   return res.send("whatcha gon do");
